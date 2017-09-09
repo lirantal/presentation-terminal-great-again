@@ -6,4 +6,9 @@ import App from './app'
 
 const screen = blessed.screen()
 
+// allow the user to quit the program
+screen.key(['escape', 'q', 'C-c'], (ch, key) => {
+  process.exit(0)
+})
+
 render(<App screen={screen} />, screen)
