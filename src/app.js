@@ -21,6 +21,10 @@ export default class App extends Component {
       <Bar
         label='bar'
         maxHeight='59'
+        top='center'
+        left='center'
+        height='50%'
+        width='30%'
         border={{type: 'line'}}
         style={{border: {fg: 'blue'}}}
         data={this.state.bar}
