@@ -16,10 +16,27 @@ export default class App extends Component {
     }
   }
 
+  componentDidMount() {
+    setInterval(this.updateClock.bind(this), 1000)
+  }
+
+  updateClock() {
+    const time = new Date()
+    const hours = time.getHours()
+    const minutes = time.getMinutes()
+    const seconds = time.getSeconds()
+
+    const barClock = {}
+    barClock.titles = ['hours', 'minutes', 'seconds']
+    barClock.data = [hours, minutes, seconds]
+
+    this.setState({bar: barClock})
+  }
+
   render() {
     return (
       <Bar
-        label='bar'
+        label='clock'
         maxHeight='59'
         top='center'
         left='center'
