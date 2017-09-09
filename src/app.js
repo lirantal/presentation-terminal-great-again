@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Bar, Grid, Line } from 'react-blessed-contrib'
+import fetch from 'node-fetch'
 
 export default class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ export default class App extends Component {
 
   componentDidMount() {
     setInterval(this.updateClock.bind(this), 1000)
+    setInterval(this.updateStarsGraph.bind(this), 5000)
   }
 
   updateClock() {
@@ -36,6 +38,20 @@ export default class App extends Component {
     barClock.data = [hours, minutes, seconds]
 
     this.setState({bar: barClock})
+  }
+
+  updateStarsGraph() {
+    const stars = this.state.stars
+    const time = new Date()
+    const timeStr = `${time.getMinutes()}:${time.getSeconds()}`
+
+    return fetch('https://api.github.com/repos/lirantal/dockly')
+      .then(res => res.json())
+      .then(json => {
+        stars.x.push(timeStr)
+        stars.y.push(json.stargazers_count)
+        this.setState({data: stars})
+      })
   }
 
   render() {
