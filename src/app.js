@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Bar, Grid } from 'react-blessed-contrib'
+import { Bar, Grid, Line } from 'react-blessed-contrib'
 
 export default class App extends Component {
   constructor(props) {
@@ -12,6 +12,11 @@ export default class App extends Component {
         data: [
           50
         ]
+      },
+      stars: {
+        title: 'Dockly Stars',
+        x: [0, 1],
+        y: [100, 100]
       }
     }
   }
@@ -36,6 +41,12 @@ export default class App extends Component {
   render() {
     return (
       <Grid rows={12} cols={12}>
+        <Line row={2} col={1} rowSpan={8} colSpan={6}
+          maxY={300}
+          label='Dockly Stars Popularity'
+          showLegend={true}
+          data={this.state.stars}
+        />
         <Bar row={2} col={8} rowSpan={8} colSpan={3}
           label='clock'
           maxHeight='59'
