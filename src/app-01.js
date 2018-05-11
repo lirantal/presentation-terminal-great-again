@@ -2,19 +2,15 @@ import React, { Component } from 'react'
 import { Bar } from 'react-blessed-contrib'
 
 export default class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.data = {
-      titles: [
-        'one'
-      ],
-      data: [
-        20
-      ]
+      titles: ['one'],
+      data: [20]
     }
   }
 
-  render() {
+  render () {
     return (
       <Bar
         label='bar1'
@@ -23,9 +19,10 @@ export default class App extends Component {
         left='center'
         height='30%'
         width='50%'
-        border={{type: 'line'}}
-        style={{border: {fg: 'blue'}}}
-        data={this.data} />
+        border={{ type: 'line' }}
+        style={{ border: { fg: 'blue' } }}
+        data={this.data}
+      />
     )
   }
 }

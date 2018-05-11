@@ -1,0 +1,24 @@
+{
+  "name": "cli-chucknorris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "chucky": "./bin/index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "chucknorris-io": "^1.0.5",
+    "inquirer": "^5.2.0",
+    "listr": "^0.13.0",
+    "ora": "^2.0.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

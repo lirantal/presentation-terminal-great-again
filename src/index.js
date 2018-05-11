@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import blessed from 'blessed'
 import { render } from 'react-blessed'
 
-import App from './app'
+import App from './app-05'
 
 const screen = blessed.screen()
 
