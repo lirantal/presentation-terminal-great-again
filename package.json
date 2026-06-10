@@ -1,4 +1,8 @@
 {
+  "publishConfig": {
+    "provenance": true,
+    "access": "public"
+  },
   "name": "terminal-great-again",
   "version": "1.0.0",
   "main": "index.js",
